@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+  }
+
+  body {
+    font-family: 'Outfit', 'Anek Devanagari', 'Plus Jakarta Sans', 'Hind', system-ui, -apple-system, sans-serif;
+    background-color: #faf7f4;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Anek Devanagari', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  button, input, select, textarea {
+    font-family: 'Outfit', 'Anek Devanagari', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Prevent iOS Safari from auto-zooming when tapping inputs */
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* Claymorphism Utility Classes */
+@layer components {
+  .clay-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 8px 8px 18px #ece4dc, -8px -8px 18px #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .clay-card:hover {
+    box-shadow: 12px 12px 24px #e0d7cd, -12px -12px 24px #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .clay-btn-primary {
+    background: linear-gradient(135deg, #f5997d, #f08665, #e4724f);
+    color: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow: 6px 6px 16px rgba(240, 134, 101, 0.38), -4px -4px 10px #ffffff;
+    transition: all 0.2s ease;
+  }
+  .clay-btn-primary:hover {
+    background: linear-gradient(135deg, #f7a389, #f28f70, #e97a58);
+    box-shadow: 8px 8px 20px rgba(240, 134, 101, 0.48), -6px -6px 14px #ffffff;
+    transform: translateY(-1px);
+  }
+  .clay-btn-primary:active {
+    box-shadow: inset 4px 4px 8px #c85a38, inset -4px -4px 8px #ffab93;
+    transform: translateY(1px);
+  }
+
+  .clay-btn-secondary {
+    background: #ffffff;
+    color: #334155;
+    border-radius: 1.25rem;
+    box-shadow: 6px 6px 12px #ece4dc, -6px -6px 12px #ffffff;
+    border: 1px solid rgba(240, 134, 101, 0.25);
+    transition: all 0.2s ease;
+  }
+  .clay-btn-secondary:hover {
+    box-shadow: 8px 8px 16px #e0d7cd, -8px -8px 16px #ffffff;
+    color: #f08665;
+    border-color: rgba(240, 134, 101, 0.5);
+  }
+
+  .clay-input {
+    background: #fdfcfb;
+    border-radius: 1rem;
+    box-shadow: inset 3px 3px 6px #ece4dc, inset -3px -3px 6px #ffffff;
+    border: 1px solid rgba(236, 228, 220, 0.8);
+    transition: all 0.2s ease;
+  }
+  .clay-input:focus {
+    box-shadow: inset 4px 4px 8px #e0d7cd, inset -4px -4px 8px #ffffff;
+    border-color: #f08665;
+  }
+
+  .clay-badge {
+    background: #ffffff;
+    border-radius: 9999px;
+    box-shadow: 3px 3px 6px #ece4dc, -3px -3px 6px #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f6f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+  border: 2px solid #f8f6f2;
+}

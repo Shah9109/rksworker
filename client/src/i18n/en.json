@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "workers": "Workers",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "India's #1 Industrial Manpower Platform",
+    "subtitle": "Get verified skilled workforce for Power Plant, Steel, Cement, Refinery, and Construction industries.",
+    "searchWorkerPlaceholder": "Search workers (Welder, Fitter, Rigger...)",
+    "searchJobPlaceholder": "Search jobs (Location, trade...)",
+    "btnSearch": "Search",
+    "statWorkers": "50,000+ Verified Workers",
+    "statCompanies": "1,200+ Industrial Companies",
+    "statJobs": "15,000+ Placements"
+  },
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Providing high-skill workforce across top heavy industries in India"
+  },
+  "services": {
+    "title": "Services & Trade Categories",
+    "subtitle": "Expert technicians and manpower for every industrial requirement"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1Title": "Register Account",
+    "step1Desc": "Create your free account using mobile number and Date of Birth",
+    "step2Title": "Add Skills & Docs",
+    "step2Desc": "Upload your Aadhaar, trade certificates, and experience details",
+    "step3Title": "Get Placed / Hire",
+    "step3Desc": "Connect directly with companies and start working immediately"
+  },
+  "auth": {
+    "loginTitle": "Login to Account",
+    "phone": "Phone Number",
+    "dob": "Date of Birth",
+    "loginBtn": "Login",
+    "noAccount": "Don't have an account?",
+    "registerWorker": "Register as Worker",
+    "registerCompany": "Register as Company",
+    "step1": "Personal Information",
+    "step2": "Skills & Experience",
+    "step3": "Documents",
+    "step4": "Review & Submit"
+  }
+}

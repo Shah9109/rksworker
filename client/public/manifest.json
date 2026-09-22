@@ -1,0 +1,34 @@
+{
+  "short_name": "WorkPower",
+  "name": "WorkPower - भारत का #1 औद्योगिक मैनपावर प्लेटफ़ॉर्म",
+  "description": "Industrial Manpower Management Platform connecting skilled workers with top industries.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#faf7f4",
+  "theme_color": "#f08665",
+  "display": "standalone",
+  "orientation": "portrait"
+}

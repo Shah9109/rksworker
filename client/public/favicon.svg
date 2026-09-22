@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Minimalist Clean Industrial Orange Squircle -->
+  <rect width="512" height="512" rx="115" fill="#f08665"/>
+
+  <!-- Minimalist Flat Hard Hat with Power Lightning Bolt -->
+  <!-- Left/Right Helmet Dome -->
+  <path d="M115 285 C115 175, 205 130, 256 128 C265 145, 270 170, 270 200 L242 200 C242 165, 220 155, 205 165 C165 195, 148 240, 148 285 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M397 285 C397 175, 307 130, 256 128 L275 160 C320 175, 360 220, 364 285 Z" fill="#ffffff" opacity="0.95"/>
+
+  <!-- Helmet Brim -->
+  <path d="M100 285 C100 273, 110 265, 122 265 L390 265 C402 265, 412 273, 412 285 C412 298, 402 308, 390 308 L122 308 C110 308, 100 298, 100 285 Z" fill="#ffffff"/>
+
+  <!-- Center Dynamic Lightning Power Bolt -->
+  <polygon points="285,130 215,265 260,265 215,385 305,245 260,245" fill="#ffffff"/>
+</svg>
