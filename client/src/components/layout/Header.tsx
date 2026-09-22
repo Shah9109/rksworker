@@ -42,38 +42,40 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Top micro-banner like reference theme */}
-      <div className="bg-[#fdfbf9] border-b border-slate-200/60 py-1.5 px-4 text-xs font-bold text-slate-600 text-center flex items-center justify-between max-w-7xl mx-auto">
-        <div className="hidden sm:flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-industrial-500 animate-pulse"></span>
-          <span>{language === 'hi' ? 'सत्यापित एवं प्रमाणित मैनपावर' : 'Certified & Verified Industrial Manpower'}</span>
-          <span className="text-industrial-600 font-extrabold">{language === 'hi' ? '• 24/7 तत्काल सहायता' : '• 24/7 Instant Support'}</span>
+      {/* FIXED TOP NAVIGATION BAR WRAPPER (Pinned to Top across Mobile & Web Views) */}
+      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-white/98 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+        {/* Top micro-banner: Visible on desktop (sm: and up), hidden on mobile to keep mobile header compact */}
+        <div className="hidden sm:flex bg-[#fdfbf9] border-b border-slate-200/60 py-1.5 px-4 text-xs font-bold text-slate-600 items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-industrial-500 animate-pulse"></span>
+            <span>{language === 'hi' ? 'सत्यापित एवं प्रमाणित मैनपावर' : 'Certified & Verified Industrial Manpower'}</span>
+            <span className="text-industrial-600 font-extrabold">{language === 'hi' ? '• 24/7 तत्काल सहायता' : '• 24/7 Instant Support'}</span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px] font-bold text-slate-500">
+            <span>{language === 'hi' ? 'हेल्पलाइन: +91 98765 43210' : 'Helpline: +91 98765 43210'}</span>
+            <span className="hidden md:inline text-industrial-600 font-extrabold">{language === 'hi' ? 'विशेष: 0% कमीशन' : 'SPECIAL: 0% PLATFORM FEE'}</span>
+            <a
+              href="https://www.catcatchcodes.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-1 text-slate-500 hover:text-industrial-600 transition-colors"
+            >
+              <span>Dev by</span>
+              <span className="text-industrial-600 font-extrabold">CatCatchCode</span>
+            </a>
+          </div>
         </div>
-        <div className="mx-auto sm:mr-0 flex items-center gap-4 text-[11px] font-bold text-slate-500">
-          <span>{language === 'hi' ? 'हेल्पलाइन: +91 98765 43210' : 'Helpline: +91 98765 43210'}</span>
-          <span className="hidden md:inline text-industrial-600 font-extrabold">{language === 'hi' ? 'विशेष: 0% कमीशन' : 'SPECIAL: 0% PLATFORM FEE'}</span>
-          <a
-            href="https://www.catcatchcodes.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-1 text-slate-500 hover:text-industrial-600 transition-colors"
-          >
-            <span>Dev by</span>
-            <span className="text-industrial-600 font-extrabold">CatCatchCode</span>
-          </a>
-        </div>
-      </div>
 
-      {/* MAIN HEADER */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/70 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Brand Logo (Top Left) */}
-            <Link to="/" className="flex items-center">
-              <Logo size="md" />
-            </Link>
+        {/* MAIN TOP NAVIGATION APPBAR */}
+        <header className="w-full">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-14 sm:h-16">
+              {/* Brand Logo (Top Left) */}
+              <Link to="/" className="flex items-center shrink-0">
+                <Logo size="md" />
+              </Link>
 
-            {/* Desktop Only Navigation Links */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-7 text-sm font-extrabold text-slate-700">
               <Link
                 to="/"
@@ -119,32 +121,34 @@ export const Header: React.FC = () => {
               </Link>
             </nav>
 
-            {/* TOP RIGHT AREA: Profile & Language Switcher (Visible on BOTH Mobile & Desktop) */}
-            <div className="flex items-center gap-2">
-              {/* Language Switcher Button (Top Right) */}
+            {/* TOP RIGHT AREA: Profile & Language Switcher */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              {/* Language Switcher Button */}
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-extrabold rounded-2xl clay-badge text-industrial-700 hover:scale-105 transition-transform"
+                className="flex items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1.5 text-[11px] sm:text-xs font-extrabold rounded-xl clay-badge text-industrial-700 hover:scale-105 active:scale-95 transition-transform cursor-pointer"
                 title="Switch Language"
               >
                 <Globe className="w-3.5 h-3.5 text-industrial-600" />
                 <span>{language === 'hi' ? 'EN' : 'हिंदी'}</span>
               </button>
 
-              {/* Profile / Auth Button (Top Right on Mobile & Desktop) */}
+              {/* Profile / Auth Buttons */}
               {isAuthenticated ? (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1 sm:gap-1.5">
                   <button
                     onClick={() => navigate(getDashboardPath())}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl clay-btn-primary text-xs font-extrabold shadow-md"
+                    className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl clay-btn-primary text-xs font-extrabold shadow-xs hover:scale-105 active:scale-95 transition-transform cursor-pointer"
                   >
-                    <User className="w-4 h-4" />
-                    <span>{user?.name ? user.name.split(' ')[0] : 'Profile'}</span>
+                    <User className="w-3.5 h-3.5" />
+                    <span className="max-w-[70px] sm:max-w-none truncate">
+                      {user?.name ? user.name.split(' ')[0] : 'Profile'}
+                    </span>
                   </button>
 
                   <button
                     onClick={logout}
-                    className="p-1.5 text-slate-500 hover:text-rose-600 rounded-xl hover:bg-rose-50 transition-colors"
+                    className="p-1 sm:p-1.5 text-slate-500 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer"
                     title="Logout"
                   >
                     <LogOut className="w-4 h-4" />
@@ -152,28 +156,28 @@ export const Header: React.FC = () => {
                 </div>
               ) : (
                 <div className="flex items-center gap-1">
-                  <Button
+                  <button
                     onClick={() => navigate('/login')}
-                    size="sm"
-                    variant="ghost"
-                    className="text-xs px-2.5 py-1.5 font-bold"
+                    className="text-xs px-2 sm:px-2.5 py-1 rounded-xl text-slate-700 hover:text-industrial-600 hover:bg-industrial-50 font-extrabold transition-colors cursor-pointer"
                   >
                     {language === 'hi' ? 'लॉगिन' : 'Login'}
-                  </Button>
-                  <Button
+                  </button>
+                  <button
                     onClick={() => navigate('/register')}
-                    size="sm"
-                    variant="primary"
-                    className="text-xs px-3 py-1.5 font-extrabold"
+                    className="text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl clay-btn-primary font-black shadow-xs hover:scale-105 active:scale-95 transition-transform cursor-pointer"
                   >
                     {language === 'hi' ? 'रजिस्टर' : 'Register'}
-                  </Button>
+                  </button>
                 </div>
               )}
             </div>
           </div>
         </div>
       </header>
+      </div>
+
+      {/* Layout Spacer to preserve document flow and prevent content from hiding underneath the fixed header */}
+      <div className="h-14 sm:h-[95px] w-full shrink-0 pointer-events-none" aria-hidden="true" />
 
       {/* FIXED MOBILE BOTTOM NAVIGATION BAR (Desktop Header Navigation Links come to Bottom in Mobile View) */}
       <MobileBottomNav />

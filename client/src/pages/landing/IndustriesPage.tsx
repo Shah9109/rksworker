@@ -257,7 +257,6 @@ export const IndustriesPage: React.FC = () => {
       </section>
 
       <Footer />
-      <MobileBottomNav />
     </div>
   );
 };

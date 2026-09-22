@@ -300,7 +300,6 @@ export const ServicesPage: React.FC = () => {
       </section>
 
       <Footer />
-      <MobileBottomNav />
     </div>
   );
 };
